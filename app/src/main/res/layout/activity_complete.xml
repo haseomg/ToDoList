@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="450dp"
+    android:layout_gravity="center"
+    android:background="@color/whatlightblue"
+    android:id="@+id/completeMainLayout"
+    tools:context=".Complete">
+
+    <FrameLayout
+        android:id="@+id/completeFrameLayout"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="400dp"
+        android:background="#0074C2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <TextView
+            android:id="@+id/completeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="완료된 목록"
+            android:textColor="@color/whatwhite"
+            android:textSize="30sp"
+            android:fontFamily="@font/nanumsquareround"/>
+    </FrameLayout>
+
+    <com.example.todolist.RecyclerViewEmptySupport
+        android:id="@+id/recycler"
+        android:layout_width="350dp"
+        android:layout_height="310dp"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/completeClose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/completeFrameLayout" />
+
+    <TextView
+        android:id="@+id/listEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nanumsquareround"
+        android:text="목록이 비어있습니다."
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/recycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recycler" />
+
+<!--    End to End / Start to Start가 parent가 아니면 뷰가 이상해짐-->
+
+    <Button
+        android:id="@+id/completeClose"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:fontFamily="@font/nanumsquareround"
+        android:gravity="center"
+        android:background="@color/whatwhite"
+        android:text="닫기"
+        android:textColor="#0074C2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/completeFrameLayout"
+        app:layout_constraintVertical_bias="0.92" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

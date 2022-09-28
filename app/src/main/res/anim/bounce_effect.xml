@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    높이가 많이 높고 속도가 느리니까 조절해주면 됨-->
+    <translate
+        android:duration="200"
+        android:fromYDelta="50%"
+        android:toYDelta="-20%"
+        />
+
+    <translate
+        android:interpolator="@android:anim/bounce_interpolator"
+        android:duration="200"
+        android:fromYDelta="-20%"
+        android:toYDelta="20%"
+        android:startOffset="200"
+        />
+
+</set>

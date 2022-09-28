@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="450dp"
+    android:id="@+id/shopLayout"
+    android:layout_gravity="center"
+    android:background="@color/whatlightblue"
+    tools:context=".Shop">
+
+    <FrameLayout
+        android:id="@+id/shopFrameLayout"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="400dp"
+        android:background="#0074C2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <TextView
+            android:id="@+id/shopTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nanumsquareround"
+            android:gravity="center"
+            android:text="상점"
+            android:textColor="@color/whatwhite"
+            android:textSize="30sp" />
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/shopGold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nanumsquareround"
+        android:gravity="left"
+        android:text="내 골드 : 0"
+        android:textColor="#589FCF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/shopClose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shopFrameLayout"
+        app:layout_constraintVertical_bias="0.01999998" />
+
+
+    <!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/nanumsquareround"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Oops..!    Coming Soon ..~!"-->
+<!--        android:textColor="#0074C2"-->
+<!--        android:textSize="45sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/shopClose"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />-->
+
+
+    <Button
+        android:id="@+id/shopClose"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:fontFamily="@font/nanumsquareround"
+        android:gravity="center"
+        android:background="@color/whatwhite"
+        android:text="닫기"
+        android:textColor="#0074C2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shopFrameLayout"
+        app:layout_constraintVertical_bias="0.92" />
+
+    <FrameLayout
+        android:id="@+id/original"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="#0074C2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/blackAndWhiteBuyBtn"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shopFrameLayout"
+        app:layout_constraintVertical_bias="0.73">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nanumsquareround"
+            android:text="Original Blue Theme"
+            android:textColor="@color/whatlightblue"
+            android:textSize="20sp" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/blackThemePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/nanumsquareround"
+        android:text="Price - 1200 gold (LV.5 이상)"
+        android:textColor="#589FCF"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shopFrameLayout"
+        app:layout_constraintVertical_bias="0.157" />
+
+    <TextView
+        android:id="@+id/whiteThemePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/nanumsquareround"
+        android:text="Price - 1200 gold (LV.5 이상)"
+        android:textColor="#589FCF"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/whiteTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blackTheme"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/ableDThemePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/nanumsquareround"
+        android:text="Price - 3000 gold (LV.20 이상)"
+        android:textColor="#589FCF"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/ableDTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whiteTheme"
+        app:layout_constraintVertical_bias="0.923" />
+
+    <FrameLayout
+        android:id="@+id/ableDTheme"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@color/whatwhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ableDThemeBuyBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shopFrameLayout"
+        app:layout_constraintVertical_bias="0.569">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nanumsquareround"
+            android:text="Dear. ABLE.D Theme"
+            android:textColor="#E43332"
+            android:textSize="20sp" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/whiteThemeBuyBtn"
+        android:layout_width="45dp"
+        android:layout_height="42dp"
+        android:background="@color/whatwhite"
+        android:fontFamily="@font/nanumsquareround"
+        android:text="구매"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/whiteTheme"
+        app:layout_constraintTop_toBottomOf="@+id/shopFrameLayout"
+        app:layout_constraintVertical_bias="0.388" />
+
+    <FrameLayout
+        android:id="@+id/blackTheme"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/blackAndWhiteBuyBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shopFrameLayout"
+        app:layout_constraintVertical_bias="0.208">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nanumsquareround"
+            android:text="Deep Black Theme"
+            android:textColor="@color/whatwhite"
+            android:textSize="20sp" />
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/originalBtn"
+        android:layout_width="45dp"
+        android:layout_height="42dp"
+        android:background="#0074C2"
+        android:fontFamily="@font/nanumsquareround"
+        android:text="구매"
+        android:textColor="@color/whatwhite"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toEndOf="@+id/original"
+        app:layout_constraintTop_toBottomOf="@+id/shopFrameLayout"
+        app:layout_constraintVertical_bias="0.729" />
+
+    <FrameLayout
+        android:id="@+id/whiteTheme"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@color/whatwhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/whiteThemeBuyBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shopFrameLayout"
+        app:layout_constraintVertical_bias="0.388">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nanumsquareround"
+            android:text="Black n White Theme"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/ableDThemeBuyBtn"
+        android:layout_width="45dp"
+        android:layout_height="42dp"
+        android:background="@color/whatwhite"
+        android:fontFamily="@font/nanumsquareround"
+        android:text="구매"
+        android:textColor="#E43332"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ableDTheme"
+        app:layout_constraintTop_toBottomOf="@+id/shopFrameLayout"
+        app:layout_constraintVertical_bias="0.569" />
+
+    <Button
+        android:id="@+id/blackAndWhiteBuyBtn"
+        android:layout_width="45dp"
+        android:layout_height="42dp"
+        android:background="@color/black"
+        android:fontFamily="@font/nanumsquareround"
+        android:text="구매"
+        android:textColor="@color/whatwhite"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/blackTheme"
+        app:layout_constraintTop_toBottomOf="@+id/shopFrameLayout"
+        app:layout_constraintVertical_bias="0.209" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

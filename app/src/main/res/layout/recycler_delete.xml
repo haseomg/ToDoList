@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#7CBBE7"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/deleteLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center_vertical"
+        android:padding="20dp" >
+
+        <Button
+            android:id="@+id/reAdd"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="#0074C2"
+            android:fontFamily="@font/nanumsquareround"
+            android:gravity="center"
+            android:text="복구"
+            android:textColor="@color/whatwhite"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/deleteText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanumsquareround"
+            android:hint="삭제된 할 일 입니다."
+            android:gravity="center"
+            android:minHeight="48dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/whatwhite"/>
+
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
