@@ -569,6 +569,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 //                saveInShared();
 
+
                 Intent intent = new Intent(MainActivity.this, Delete.class);
 
 //                ArrayList<String> deleteItems = new ArrayList<>();
