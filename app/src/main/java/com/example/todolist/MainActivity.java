@@ -183,6 +183,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL
                 , false));
 
+        // arraylist 1
         addItems = new ArrayList<>();
 
         completeItems = new ArrayList<>();
@@ -190,7 +191,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         deleteItems = new ArrayList<>();
 
 
-        //JSON 사용해본 부분
+        // JSON 사용해본 부분
 
 //        Collection<?> colValue = shared.getAll().values();
 //        Iterator<?> itValue = colValue.iterator();
@@ -275,9 +276,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         bringDidCountInShared();
 
-
         bringBlackThemeInShared();
-
 
 //        bringAddShared();
 
@@ -335,9 +334,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
                         // 삭제 - 해야할 일
-                        // deleteItems랑 completeItems는 메인액티비티 것을 가져다 쓰자
+                        // deleteItems 랑 completeItems 는 메인액티비티 것을 가져다 쓰자
 
-                        Log.i("( 스와이프 시 아이템확인 시작 완인=====================================================", "");
+                        Log.i("( 스와이프 시 아이템확인 시작 완인===================================================== ", "");
 
                         String addShared = new String();
                         for (int i = 0; i < addItems.size(); i++) {
@@ -381,9 +380,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         preferenceManager.setString(((MainActivity) MainActivity.ctx).getApplication(),
                                 "deleteList", "" + sharedIn + myDelete + " __ ");
 
-                        Log.i("swipeDelete start---------------------------------------", "");
-                        Log.i("swipeDelete ---------------------------------------", "");
-                        Log.i("swipeDelete myDelete + sharedIn 000 ", "" + myDelete + sharedIn);
+                        Log.i(" swipeDelete start--------------------------------------- ", "");
+                        Log.i(" swipeDelete --------------------------------------- ", "");
+                        Log.i(" swipeDelete myDelete + sharedIn 000 ", "" + myDelete + sharedIn);
 
 
                         String swipeDelete = shared.getString("deleteList", "없음");
@@ -530,6 +529,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                addAdapter = new AddAdapter(addItems);
 
 
+                // 추가 1
                 AddItem data = new AddItem();
 
                 add.requestFocus();
@@ -537,6 +537,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                 RecyclerView의 첫 줄에 삽입
 //                addItems.add(0, data);
                 // RecyclerView의 마지막 줄에 삽입
+                // 추가 2
                 addItems.add(data);
 
                 myLv = myLv + 0;
@@ -552,13 +553,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 saveInShared();
 
 //                addAdapter.notifyItemInserted(position);
+                // 추가 3
                 addAdapter.notifyItemRangeInserted(position, addItems.size());
                 Log.i("메인액티비티", "아이템 추가할 때 addItems.size() : " + addItems.size());
 //                addAdapter.notifyItemRangeChanged(position, addItems.size());
                 Log.i("메인액티비티", "아이템 추가할 때 position + addItems.size() : " + position + " + " + addItems.size());
 //                addAdapter.notifyItemChanged(position);
 
-                addAdapter.notifyDataSetChanged();
+//                addAdapter.notifyDataSetChanged();
             }
         });
 
@@ -805,8 +807,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.i("(중간) clear", "---------------------------------" + deleteItems.size());
         bringDeleteInShared();
         Log.i("(후) clear", "---------------------------------" + deleteItems.size());
-
-
     }
 
     protected void onPause() {
