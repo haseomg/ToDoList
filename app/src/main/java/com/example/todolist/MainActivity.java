@@ -241,7 +241,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            String myToDoArray[] = myToDo.split(" __ ");
                 //반복문 돌려야 해 length 맞게 아이템추가하고 어레이리스트에도 추가해주면 돼
                 for (int i = 0; i < myToDoArray.length; i++) {
-                    Log.i("순서대로 myToDoAray", "" + myToDoArray[i]);
+                    Log.i("순서대로 myToDoArray", "" + myToDoArray[i]);
                     AddItem myToDoItem = new AddItem(myToDoArray[i]);
                     addItems.add(myToDoItem);
 
@@ -318,6 +318,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
                 for (int i = 0; i < addItems.size(); i++) {
+
                     // 포지션이랑 getToDoList
                     addItems.get(i).getToDoList();
                     Log.i("i번 째 getToDoList", " " + i + "번 째" + addItems.get(i).getToDoList());
