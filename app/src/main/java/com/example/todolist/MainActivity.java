@@ -854,6 +854,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void saveInShared() {
 
+
         // 원 키 다중벨류
         String sharedIn = new String();
 
