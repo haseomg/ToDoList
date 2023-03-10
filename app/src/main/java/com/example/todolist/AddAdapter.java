@@ -91,6 +91,8 @@ public class AddAdapter extends RecyclerView.Adapter<AddAdapter.ViewHolder> impl
 
 //    public void setCompleteItems(ArrayList<AddItem> completeItems, Context context) {
 //        this.completeItems = completeItems;
+
+
 //        this.ctx = context;
 //    }
 
@@ -213,18 +215,25 @@ public class AddAdapter extends RecyclerView.Adapter<AddAdapter.ViewHolder> impl
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ctx = parent.getContext();
 //        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        LayoutInflater inflater = (LayoutInflater)
-                ctx.getSystemService(ctx.LAYOUT_INFLATER_SERVICE);
+//        LayoutInflater inflater = (LayoutInflater)
+//                ctx.getSystemService(ctx.LAYOUT_INFLATER_SERVICE);
+        // TODO 위 코드에서 수정한 코드
+        LayoutInflater inflater = LayoutInflater.from(ctx);
+
         View view = inflater.inflate(R.layout.recycler_add, parent, false);
         AddAdapter.ViewHolder vh = new AddAdapter.ViewHolder(view);
 
-        return vh;
+//        return vh;
+        // TODO 위 코드에서 수정한 코드
+        return new ViewHolder(view);
 //        return null;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewholder, @SuppressLint("RecyclerView") int position) {
+
+
 
         shared = ((MainActivity) MainActivity.ctx).ctx.getSharedPreferences("toDoList", Activity.MODE_PRIVATE);
         editor = ((MainActivity) MainActivity.ctx).editor;
@@ -401,6 +410,12 @@ public class AddAdapter extends RecyclerView.Adapter<AddAdapter.ViewHolder> impl
                     }
                 }
                 if (hasFocus) {
+//                    recyclerView.post(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            recyclerView.smoothScrollToPosition(getItemCount());
+//                        }
+//                    });
                     if (viewholder.addWrite.length() > 1) {
                         Log.i("어댑터의 포커스가 맞을때 addItem.getToDoList", "" +
                                 addItem.getToDoList());
@@ -853,6 +868,8 @@ public class AddAdapter extends RecyclerView.Adapter<AddAdapter.ViewHolder> impl
 
     public void setPositionData(ArrayList<AddItem> addItems) {
         this.addItems = addItems;
+        notifyDataSetChanged();
+        refreshRecyclerView();
     }
 
     public AddItem getAddItem(int position) {
@@ -877,8 +894,13 @@ public class AddAdapter extends RecyclerView.Adapter<AddAdapter.ViewHolder> impl
 
     @Override
     public int getItemCount() {
-        return (null != addItems ? addItems.size() : 0);
+//        return (null != addItems ? addItems.size() : 0);
 //        return addItems.size();
+        if (addItems == null) {
+            return 0;
+        } else {
+            return addItems.size();
+        }
     }
 
 //    public void removeItem(int position) {
@@ -940,4 +962,13 @@ public class AddAdapter extends RecyclerView.Adapter<AddAdapter.ViewHolder> impl
         editor.commit();
     }
 
+    private void refreshRecyclerView() {
+        recyclerView.post(new Runnable() {
+            @Override
+            public void run() {
+                recyclerView.invalidate();
+                recyclerView.requestLayout();
+            }
+        });
+    }
 }

@@ -560,7 +560,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.i("메인액티비티", "아이템 추가할 때 position + addItems.size() : " + position + " + " + addItems.size());
 //                addAdapter.notifyItemChanged(position);
 
-//                addAdapter.notifyDataSetChanged();
+                addAdapter.notifyDataSetChanged();
             }
         });
 
