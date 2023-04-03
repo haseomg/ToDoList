@@ -380,7 +380,7 @@ public class Shop extends Activity {
                     }
                 } else {
                     Log.i("AbleD Theme lvUp이 20 이하일 때", "");
-                    Toast.makeText(ctx, "- LV.20 이상 구입 33가능 -", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ctx, "- LV.20 이상 구입 가능 -", Toast.LENGTH_SHORT).show();
                 }
             }
         });
